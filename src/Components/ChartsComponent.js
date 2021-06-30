@@ -3,11 +3,13 @@ import Chart from "react-google-charts";
 function ChartsComponent(props) {
     let datas = props.takedata;
     console.log(datas);
+    const width= window.innerWidth;
+    console.log(width);
   return (
-    <div>
+    <div class="my-8">
       <Chart
-        width={"600px"}
-        height={"600px"}
+        width={width === 375 ? "350px" : "700px"}
+        height={width === 375 ? "350px" : "700px"}
         chartType="PieChart"
         loader={<div> Loading Chart </div>}
         data={[
