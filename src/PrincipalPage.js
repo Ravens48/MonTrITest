@@ -1,4 +1,5 @@
 import FormsComponent from "./Components/FormsComponent";
+import ChartsComponent from "./Components/ChartsComponent"
 import logo from "./logomontri.png";
 
 function PrincipalPage() {
@@ -16,7 +17,7 @@ function PrincipalPage() {
         <FormsComponent />
       </div>
       <div class="lg:w-1/2 ml-4">
-        <h1>charts</h1>
+          <ChartsComponent/>
       </div>
     </div>
   );
