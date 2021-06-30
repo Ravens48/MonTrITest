@@ -30,7 +30,7 @@ function FormsComponent(props) {
           />
           <input
             class="shadow appearance-none border rounded-lg w-38 h-12 py-2 px-6 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-            id="value1"
+            id="value2"
             type="number"
             placeholder="enter number y"
             value={values.v2}
