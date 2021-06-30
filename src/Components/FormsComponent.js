@@ -4,9 +4,9 @@ function FormsComponent(props) {
   const [values, setValues] = useState({});
   const handleChange = (event) => {
     setValues({ ...values, [event.target.name]: event.target.value });
+    console.log("changes", values)
   };
   const handleSubmit = (event) => {
-    console.log(values);
     event.preventDefault();
     props.getData(values);
   };
@@ -41,7 +41,7 @@ function FormsComponent(props) {
           <button
             type="submit"
             class="bg-yellow-500 text-white px-6 py-2 w-52 h-12 rounded-lg font-medium hover:bg-yellow-600 transition duration-200 each-in-out disabled:opacity-50"
-          >
+            disabled={values && values.v2 ? false :true}>
             Visualiser
           </button>
         </div>
