@@ -1,8 +1,14 @@
 import FormsComponent from "./Components/FormsComponent";
 import ChartsComponent from "./Components/ChartsComponent"
 import logo from "./logomontri.png";
+import { react, useState } from "react";
+
 
 function PrincipalPage() {
+    const [datas, setDatas] = useState({})
+    const getData = (childData) => {
+        setDatas(childData)
+  };
   return (
     <div class="lg:flex">
       <div class="lg:w-1/2 md:ml-36 ml-4">
@@ -14,10 +20,12 @@ function PrincipalPage() {
             </h1>
           </div>
         </div>
-        <FormsComponent />
+        <FormsComponent getData={getData}/>
       </div>
       <div class="lg:w-1/2 ml-4">
-          <ChartsComponent/>
+          {datas && datas.v1 &&
+          <ChartsComponent takedata={datas}/>
+          }
       </div>
     </div>
   );

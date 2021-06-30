@@ -1,6 +1,8 @@
 import Chart from "react-google-charts";
 
-function ChartsComponent() {
+function ChartsComponent(props) {
+    let datas = props.takedata;
+    console.log(datas);
   return (
     <div>
       <Chart
@@ -10,8 +12,8 @@ function ChartsComponent() {
         loader={<div> Loading Chart </div>}
         data={[
           ["Input", "Values"],
-          ["Value1", 10],
-          ["Value2", 90],
+          ["Value1", parseInt(datas.v1)],
+          ["Value2", parseInt(datas.v2)],
         ]}
         options={{
           title: "Valeurs de vos champs",

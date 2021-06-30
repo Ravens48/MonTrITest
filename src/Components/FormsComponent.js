@@ -1,6 +1,6 @@
 import { react, useState } from "react";
 
-function FormsComponent() {
+function FormsComponent(props) {
   const [values, setValues] = useState({});
   const handleChange = (event) => {
     setValues({ ...values, [event.target.name]: event.target.value });
@@ -8,6 +8,7 @@ function FormsComponent() {
   const handleSubmit = (event) => {
     console.log(values);
     event.preventDefault();
+    props.getData(values);
   };
   return (
     <div class="my-8">
