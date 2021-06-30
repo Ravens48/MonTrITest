@@ -1,10 +1,9 @@
-import { react, useState } from "react";
+import {useState } from "react";
 
 function FormsComponent(props) {
   const [values, setValues] = useState({});
   const handleChange = (event) => {
     setValues({ ...values, [event.target.name]: event.target.value });
-    console.log("changes", values)
   };
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -12,7 +11,7 @@ function FormsComponent(props) {
   };
   return (
     <div class="my-8">
-      <p class="text-2xl my-4 font-medium">Renseignez une valeur pour chaque champs</p>
+      <p class="text-2xl my-4 font-medium font-mono">Renseignez une valeur pour chaque champs</p>
       <form onSubmit={handleSubmit}>
         <div class="md:flex md:space-x-8">
           <input

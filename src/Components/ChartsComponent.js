@@ -2,9 +2,7 @@ import Chart from "react-google-charts";
 
 function ChartsComponent(props) {
     let datas = props.takedata;
-    console.log(datas);
     const width= window.innerWidth;
-    console.log(width);
   return (
     <div class="my-8">
       <Chart
