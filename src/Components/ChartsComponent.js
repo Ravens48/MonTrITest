@@ -8,17 +8,17 @@ function ChartsComponent(props) {
   return (
     <div class="my-8">
       <Chart
-        width={width === 375 ? "350px" : "700px"}
-        height={width === 375 ? "350px" : "700px"}
+        width={width < 475 ? "350px" : "700px"}
+        height={width < 475 ? "350px" : "700px"}
         chartType="PieChart"
         loader={<div> Loading Chart </div>}
         data={[
           ["Input", "Values"],
-          ["Value1", parseInt(datas.v1)],
-          ["Value2", parseInt(datas.v2)],
+          ["Valeurs de x", parseInt(datas.v1)],
+          ["Valeurs de y", parseInt(datas.v2)],
         ]}
         options={{
-          title: "Valeurs de vos champs",
+          title: "Valeurs de x et y",
           pieHole: 0.4,
           slices: {
             0: { color: "orange" },

@@ -12,15 +12,16 @@ function FormsComponent(props) {
   };
   return (
     <div class="my-8">
-      <p class="text-2xl">Renseignez une valeur pour chaque champs</p>
+      <p class="text-2xl my-4 font-medium">Renseignez une valeur pour chaque champs</p>
       <form onSubmit={handleSubmit}>
         <div class="md:flex md:space-x-8">
           <input
             class="shadow appearance-none border rounded-lg w-38 h-12 py-2 px-6 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
             id="value1"
             type="number"
-            placeholder="0"
+            placeholder="enter number x"
             value={values.v1}
+            min={1}
             name="v1"
             onChange={handleChange}
             required
@@ -30,8 +31,9 @@ function FormsComponent(props) {
             id="value1"
             type="number
           "
-            placeholder="0"
+            placeholder="enter number y"
             value={values.v2}
+            min={1}
             name="v2"
             onChange={handleChange}
             required
@@ -41,7 +43,7 @@ function FormsComponent(props) {
           <button
             type="submit"
             class="bg-yellow-500 text-white px-6 py-2 w-52 h-12 rounded-lg font-medium hover:bg-yellow-600 transition duration-200 each-in-out disabled:opacity-50"
-            disabled={values && values.v2 ? false :true}>
+            disabled={values && values.v1 > 0 && values.v2 > 0 ? false :true}>
             Visualiser
           </button>
         </div>
